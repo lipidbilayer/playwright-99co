@@ -1,0 +1,8 @@
+  Feature: Search Desktop Web Functionality Verification
+  
+  Scenario Outline: Verify Desktop Web Search Functionality for Different Inputs and Locations
+    Given the user is on the 99.co desktop web homepage
+    When they select "<tipe_properti>" from the Tipe Properti dropdown
+    And they enter "<lokasi>" in the Lokasi field
+    And they click on the "<tab>" tab
+    Then they should see search results related to "<tipe_properti>" and "<lokasi>"

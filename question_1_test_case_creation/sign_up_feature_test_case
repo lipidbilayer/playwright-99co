@@ -1,0 +1,59 @@
+Feature: Signup Feature
+    As a new user
+    I want to sign up to the website
+    So that I can use the website
+
+  Scenario: Successful signs up with valid information
+    Given I am on the signup page
+    When I enter valid name, username, email, and password
+    And I click the signup button
+    Then I should be successfully registered
+    And I should be redirected to the homepage
+
+  Scenario: Signs up with incomplete information
+    Given I am on the signup page
+    When I enter incomplete information
+    And I click the signup button
+    Then I should see appropriate error messages for the missing fields
+
+  Scenario: Signs up with invalid email
+    Given I am on the signup page
+    When I enter invalid email format
+    And I click the signup button
+    Then I should see an error message indicating invalid email format
+
+  Scenario: Signs up with already registered email
+    Given I am on the signup page
+    And the email I entered is already registered in the database
+    When I click the signup button
+    Then I should see an error message indicating email is already registered
+
+  Scenario: Signs up with already registered username
+    Given I am on the signup page
+    And the username I entered is already registered in the database
+    When I click the signup button
+    Then I should see an error message indicating username is already taken
+
+  Scenario: Signs up with weak password
+    Given I am on the signup page
+    When I enter a password with less than 8 characters
+    And I click the signup button
+    Then I should see an error message indicating password is too short
+
+  Scenario: Signs up using password without lowercase character
+    Given I am on the signup page
+    When I enter a password without any lowercase characters
+    And I click the signup button
+    Then I should see an error message indicating password requires at least one lowercase character
+
+  Scenario: Signs up using password without uppercase character
+    Given I am on the signup page
+    When I enter a password without any uppercase characters
+    And I click the signup button
+    Then I should see an error message indicating password requires at least one uppercase character
+
+  Scenario: User enters password without symbol
+    Given I am on the signup page
+    When I enter a password without any symbols
+    And I click the signup button
+    Then I should see an error message indicating password requires at least one symbol

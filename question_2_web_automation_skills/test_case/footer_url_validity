@@ -1,0 +1,15 @@
+Feature: Desktop Links Verification on footer page
+
+  Scenario: Verify Links under Properti Dijual
+    Given I am on the 99.co desktop homepage
+    When I navigate to the "Properti Dijual" section
+    And I click the "Properti Dijual" button
+    Then I should see a list of links
+    And each link should lead to a valid page or resource
+
+  Scenario: Verify Links under Properti Disewa
+    Given I am on the 99.co desktop homepage
+    When I navigate to the "Properti Disewa" section
+    And I click the "Properti Disewa" button
+    Then I should see a list of links
+    And each link should lead to a valid page or resource

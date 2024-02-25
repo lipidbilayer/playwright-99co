@@ -70,7 +70,7 @@ func TestSearchBeliRukoJawaBarat(t *testing.T) {
 
 	sr := searchresult.New(pwe.Page)
 
-	err = sr.IVerifySearchResultHeaderTitle("jual", "ruko", "jawa-barat")
+	err = sr.IVerifySearchResultHeaderTitle("jual", "rumah", "jawa-barat")
 	assert.NoError(t, err, "Search result title should be match with search params")
 }
 
